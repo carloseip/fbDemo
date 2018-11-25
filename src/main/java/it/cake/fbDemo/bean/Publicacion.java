@@ -10,21 +10,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Publicacion")
+@Table(name="publicacion")
 public class Publicacion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
 	public Publicacion() {
-		
 	}
 
-
-	public Publicacion(int IdPublicacion, int descripcion, Usuario usuario) {
-		this.IdPublicacion = IdPublicacion;
+	public Publicacion(int idPublicacion, String descripcion, Usuario usuario) {
+		IdPublicacion = idPublicacion;
 		this.descripcion = descripcion;
 		this.usuario = usuario;
 	}
+
 
 
 	@Id
@@ -32,7 +31,7 @@ public class Publicacion implements Serializable{
 	private int IdPublicacion;
 	
 	@Column(name="Descripcion", nullable= false)
-	private int descripcion;
+	private String descripcion;
 	
 	@ManyToOne
 	@JoinColumn(name="IdUsuario")
@@ -48,14 +47,14 @@ public class Publicacion implements Serializable{
 		IdPublicacion = idPublicacion;
 	}
 
-
-	public int getDescripcion() {
+	public String getDescripcion() {
 		return descripcion;
 	}
 
-	public void setDescripcion(int descripcion) {
+	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 
 	public Usuario getUsuario() {
 		return usuario;

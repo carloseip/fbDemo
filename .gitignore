@@ -16,6 +16,10 @@
 *.iml
 *.ipr
 
+### Eclipse o Spring Tool Suite ###
+
+/bin
+
 ### NetBeans ###
 /nbproject/private/
 /build/
